@@ -37,7 +37,6 @@ for num  in range (1024):
 
     #send the respons to the url passing the url obj, and header
     response = session.post(url, my_obj, headers=head)
-    print(num)
-    print("Success")
+    print("Success: {}".format(num))
 
-print("See You later Hacker")
+print("Well Done. See you later hacker 8)")
