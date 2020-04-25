@@ -1,6 +1,4 @@
-#!/usr/bin/python3
-
-import requests, sys
+mport requests, sys
 
 argv = sys.argv
 
@@ -40,6 +38,7 @@ def header():
         head = {}
         head.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36'})
         head.update({'Referer': url})
+        print("send the response to the user Agent")
         return head
     except:
         print("header Error")
@@ -58,9 +57,9 @@ if len(argv) == 3:
     
         cookie = do_connection()
 
-        my_obj = {"id": id, 'holdthedoor': 'Submit', 'key': cookie['HoldTheDoor']}
+        my_obj = {"id": '125', 'holdthedoor': 'Submit', 'key': cookie['HoldTheDoor']}
         head = header()
-        response = session.post(url, data=my_obj, headers=head)
+        response = session.post(url, my_obj, headers=head)
         print("Success: {}".format(num))
 
 print("Well Done. See you later hacker 8)")
